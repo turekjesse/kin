@@ -42,11 +42,20 @@
     }
   {%- endif -%}
 
-  @media screen and (min-width: 990px) {
+  {% if section.settings.menu_type_desktop == 'Drawer' %}
     header-drawer {
-      display: none;
+      display: flex;
     }
-  }
+
+    .header__inline-menu {
+      display: none !important;
+    }
+  {% else %}
+    @media screen and (min-width: 990px) {
+      header-drawer {
+        display: none;
+      }
+  {% endif %}
 
   .menu-drawer-container {
     display: flex;
@@ -467,7 +476,7 @@
             {%- endfor -%}
           </ul>
         </nav>
-      {%- else -%}
+      {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
         <nav class="header__inline-menu">
           <ul class="list-menu list-menu--inline" role="list">
             {%- for link in section.settings.menu.links -%}
@@ -896,6 +905,10 @@
         {
           "value": "mega",
           "label": "t:sections.header.settings.menu_type_desktop.options__2.label"
+        },
+        {
+          "value": "Drawer",
+          "label": "Drawer"
         }
       ],
       "default": "dropdown",
