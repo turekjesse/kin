@@ -2254,6 +2254,11 @@ input[type='checkbox'] {
   align-items: center;
 }
 
+.header--transparent { 
+  position: absolute;
+  width: 100%;
+}
+
 @media screen and (min-width: 990px) {
   .header--top-left,
   .header--middle-left:not(.header--has-menu) {
