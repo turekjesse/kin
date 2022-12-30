@@ -965,6 +965,9 @@
     "header": {
       "name": "Header",
       "settings": {
+         "color_scheme_help": {
+          "content": "Select a color scheme if header is not transparent. Edit color options in [theme settings](/editor?context=theme&category=colors)."
+        },
         "logo_header": {
           "content": "Logo"
         },
