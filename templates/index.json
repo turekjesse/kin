@@ -6,14 +6,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Bliss up for Blisstober",
+            "heading": "Bliss up for <span id=\"bliss\">Bliss<\/span>tober",
             "heading_size": "h0"
+          }
+        },
+        "397f644c-18c4-4d9b-8986-55a9fe7d5c9e": {
+          "type": "text",
+          "settings": {
+            "text": "For a limited time, bundle your bliss and save.",
+            "text_style": "subtitle"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "(1x high rhode, 1x dream light, and a 20-pack of kin spritz",
+            "text": "(1x high rhode, 1x dream light, and a 20-pack of kin spritz.",
             "text_style": "caption-with-letter-spacing"
           }
         },
@@ -31,6 +38,7 @@
       },
       "block_order": [
         "heading",
+        "397f644c-18c4-4d9b-8986-55a9fe7d5c9e",
         "text",
         "button"
       ],
@@ -39,9 +47,9 @@
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "middle-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "accent-1",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
