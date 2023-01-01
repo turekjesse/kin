@@ -1,7 +1,7 @@
 .totals {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .totals > * {
@@ -33,4 +33,11 @@
   .totals {
     justify-content: flex-end;
   }
+}
+
+.totals__subtotal-value {
+  font-family: "Univers Extended Bold";
+  font-size: 14px;
+  line-height: 31px;
+  letter-spacing: 0.7777777910232544px;
 }
