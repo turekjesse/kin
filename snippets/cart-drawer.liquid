@@ -11,6 +11,11 @@
   .drawer {
     visibility: hidden;
   }
+
+  .cart-logo {
+    width: {{ settings.mobile_logo_width }}px;
+  }
+  
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
@@ -26,16 +31,29 @@
       {%- if cart == empty -%}
         <div class="drawer__inner-empty">
           <div class="cart-drawer__warnings center{% if settings.cart_drawer_collection != blank %} cart-drawer__warnings--has-collection{% endif %}">
+            <div class="drawer__empty-header">              
+              {%- if settings.cart_logo != blank -%}
+              {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+              {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+              {{ settings.cart_logo | image_url: width: 500 | image_tag:
+                class: 'header__heading-logo cart-logo motion-reduce',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500',
+                height: logo_height,
+                width: settings.mobile_logo_width,
+                alt: logo_alt
+              }}
+                <button
+                  class="drawer__close"
+                  type="button"
+                  onclick="this.closest('cart-drawer').close()"
+                  aria-label="{{ 'accessibility.close' | t }}"
+                >
+                  {% render 'icon-close-cart-kin' %}
+                </button>
+            </div>
+            <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
             <div class="cart-drawer__empty-content">
-              <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
-              <button
-                class="drawer__close"
-                type="button"
-                onclick="this.closest('cart-drawer').close()"
-                aria-label="{{ 'accessibility.close' | t }}"
-              >
-                {% render 'icon-close-cart-kin' %}
-              </button>
+            {% endif %}
               <a href="{{ routes.all_products_collection_url }}" class="button">
                 {{ 'general.continue_shopping' | t }}
               </a>
@@ -63,7 +81,7 @@
           onclick="this.closest('cart-drawer').close()"
           aria-label="{{ 'accessibility.close' | t }}"
         >
-          {% render 'icon-close' %}
+          {% render 'icon-close-cart-kin' %}
         </button>
       </div>
       <cart-drawer-items
