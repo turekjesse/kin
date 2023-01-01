@@ -400,7 +400,7 @@
 }
 
 .banner__box .banner__heading + * {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .banner__buttons {
@@ -434,5 +434,5 @@
 }
 
 .banner__box > * + .banner__buttons {
-  margin-top: 2rem;
+  margin-top: 12px;
 }
