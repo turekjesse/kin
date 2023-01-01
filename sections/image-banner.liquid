@@ -103,7 +103,7 @@
             </h2>
           {%- when 'text' -%}
             <div class="banner__text {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-              <span>{{ block.settings.text | escape }}</span>
+              <span>{{ block.settings.text }}</span>
             </div>
           {%- when 'buttons' -%}
             <div
@@ -111,13 +111,18 @@
               {{ block.shopify_attributes }}
             >
               {%- if block.settings.button_label_1 != blank -%}
+              <style>
+                .banner__buttons a.button {
+                  padding: 0 {{ block.settings.custom_btn_padding }}px;
+                }
+              </style>
                 <a
                   {% if block.settings.button_link_1 == blank %}
                     role="link" aria-disabled="true"
                   {% else %}
                     href="{{ block.settings.button_link_1 }}"
                   {% endif %}
-                  class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
+                  class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"                  
                 >
                   {{- block.settings.button_label_1 | escape -}}
                 </a>
@@ -368,7 +373,7 @@
       "limit": 2,
       "settings": [
         {
-          "type": "text",
+          "type": "html",
           "id": "text",
           "default": "Give customers details about the banner image(s) or content on the template.",
           "label": "t:sections.image-banner.blocks.text.settings.text.label"
@@ -435,6 +440,16 @@
           "id": "button_style_secondary_2",
           "default": false,
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
+        },
+        {
+          "type": "range",
+          "id": "custom_btn_padding",
+          "min": 10,
+          "max": 150,
+          "step": 2,
+          "default": 10,
+          "unit": "px",
+          "label": "customize banner button padding"
         }
       ]
     }
