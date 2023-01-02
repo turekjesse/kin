@@ -133,7 +133,7 @@
             </div>
           {%- when 'buttons' -%}
             <div
-              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
+              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.mobile_button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
               {{ block.shopify_attributes }}
             >
               {%- if block.settings.button_label_1 != blank -%}
@@ -156,7 +156,12 @@
                   {% endif %}
                   class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"                  
                 >
-                  {{- block.settings.button_label_1 | escape -}}
+                  {% if block.settings.button_label_1 != blank and block.settings.mobile_button_label_1 != blank %}
+                    <span class="medium-hide large-up-hide">{{- block.settings.mobile_button_label_1 | escape -}}</span>                  
+                    <span class="small-hide">{{- block.settings.button_label_1 | escape -}}</span>
+                  {% elsif block.settings.button_label_1 != blank and block.settings.mobile_button_label_1 == blank %}     
+                    {{- block.settings.button_label_1 | escape -}}                            
+                  {% endif %}
                 </a>
               {%- endif -%}
               {%- if block.settings.button_label_2 != blank -%}
@@ -464,6 +469,13 @@
           "default": "Button label",
           "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label",
           "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
+        },
+        {
+          "type": "text",
+          "id": "mobile_button_label_1",
+          "default": "Button label",
+          "label": "Mobile-specific label (if to be different from desktop).",
+          "info": "First button label must be populated to use the mobile-specific label."
         },
         {
           "type": "url",
