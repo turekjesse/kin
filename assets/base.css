@@ -246,7 +246,7 @@ html.no-js .no-js-hidden {
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 4rem;
 }
 
 .page-width-desktop {
@@ -2420,6 +2420,11 @@ input[type='checkbox'] {
   width: 2rem;
   fill: none;
   vertical-align: middle;
+}
+
+.icon.icon-hamburger, .icon.icon-close {
+  height: 4.8rem;
+  width: 4.8rem;
 }
 
 .header__icon,
