@@ -33,8 +33,34 @@
   id="Banner-{{ section.id }}"
   class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}"
 >
-  {%- if section.settings.image != blank -%}
-    <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}">
+  {%- if section.settings.mobile_image != blank -%}
+    <div class="banner__media mobile media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}">
+      {%- liquid
+        assign image_height = section.settings.mobile_image.width | divided_by: section.settings.mobile_image.aspect_ratio
+        if section.settings.image_2 != blank
+          assign image_class = 'banner__media-image-half'
+        endif
+        if section.settings.image_2 != blank and section.settings.stack_images_on_mobile
+          assign sizes = '(min-width: 750px) 50vw, 100vw'
+        elsif section.settings.image_2 != blank
+          assign sizes = '50vw'
+        else
+          assign sizes = '100vw'
+        endif
+      -%}
+      {{
+        section.settings.mobile_image
+        | image_url: width: 3840
+        | image_tag:
+          loading: 'lazy',
+          width: section.settings.image.width,
+          height: image_height,
+          class: image_class,
+          sizes: sizes,
+          widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+      }}
+    </div>
+    <div class="banner__media desktop media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}">
       {%- liquid
         assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
         if section.settings.image_2 != blank
@@ -93,7 +119,7 @@
       }}
     </div>
   {%- endif -%}
-  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width">
+  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} banner__content--{{ section.settings.mobile_content_position }} page-width">
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -112,8 +138,14 @@
             >
               {%- if block.settings.button_label_1 != blank -%}
               <style>
-                .banner__buttons a.button {
-                  padding: 0 {{ block.settings.custom_btn_padding }}px;
+                @media screen and (min-width: 750px) {
+                  .banner__buttons {
+                    width: {{ block.settings.custom_btn_width }}px;
+                  }
+  
+                  .banner__buttons > a {
+                    padding: 0px;
+                  }
                 }
               </style>
                 <a
@@ -156,6 +188,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.image-banner.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
     },
     {
       "type": "image_picker",
@@ -321,6 +358,22 @@
       "label": "t:sections.image-banner.settings.mobile_content_alignment.label"
     },
     {
+      "type": "select",
+      "id": "mobile_content_position",
+      "options": [        
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "bottom",
+      "label": "mobile content position"
+    },
+    {
       "type": "checkbox",
       "id": "stack_images_on_mobile",
       "default": true,
@@ -443,13 +496,13 @@
         },
         {
           "type": "range",
-          "id": "custom_btn_padding",
-          "min": 10,
-          "max": 150,
-          "step": 2,
-          "default": 10,
+          "id": "custom_btn_width",
+          "min": 50,
+          "max": 500,
+          "step": 5,
+          "default": 50,
           "unit": "px",
-          "label": "customize banner button padding"
+          "label": "customize banner button width"
         }
       ]
     }
