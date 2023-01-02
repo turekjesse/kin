@@ -2,6 +2,9 @@
   "current": {
     "logo": "shopify:\/\/shop_images\/Object_13854295-1f5e-4989-85a8-e15bcbbb0143.png",
     "cart_logo": "shopify:\/\/shop_images\/menu_4341c898-d22c-46dd-8ce0-75b435de2d22.png",
+    "mobile_header_bg_color": "#f9f8f5",
+    "desktop_header_font_color": "#232323",
+    "mobile_header_font_color": "#232323",
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "rgba(0,0,0,0)",
     "gradient_accent_1": "",
@@ -130,6 +133,31 @@
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "75ad5e8c-f35d-45b8-bf54-33b796964d97": {
+            "type": "product",
+            "settings": {
+              "featured_product": "dream-light"
+            }
+          },
+          "1949ab23-19f9-4c38-b7ed-0191394797b4": {
+            "type": "product",
+            "settings": {
+              "featured_product": "high-rhode"
+            }
+          },
+          "4d02261c-d28d-4e04-8615-15c217075452": {
+            "type": "product",
+            "settings": {
+              "featured_product": "kin-spritz"
+            }
+          }
+        },
+        "block_order": [
+          "75ad5e8c-f35d-45b8-bf54-33b796964d97",
+          "1949ab23-19f9-4c38-b7ed-0191394797b4",
+          "4d02261c-d28d-4e04-8615-15c217075452"
+        ],
         "settings": {
           "use_transparent_header": true,
           "color_scheme": "accent-2",
