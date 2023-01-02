@@ -6,14 +6,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Bliss up for <span id=\"bliss\">Bliss<\/span>tober",
+            "heading": "Bliss up for <br><span id=\"bliss\">Bliss<\/span>tober",
             "heading_size": "h0"
           }
         },
         "397f644c-18c4-4d9b-8986-55a9fe7d5c9e": {
           "type": "text",
           "settings": {
-            "text": "For a limited time, bundle your bliss and save.",
+            "text": "For a limited time, bundle<br> your bliss and save.",
             "text_style": "subtitle"
           }
         },
@@ -33,7 +33,7 @@
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false,
-            "custom_btn_padding": 96
+            "custom_btn_width": 335
           }
         }
       },
@@ -45,6 +45,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/hero_img_d.png",
+        "mobile_image": "shopify:\/\/shop_images\/hero_img_m.png",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "middle-left",
@@ -52,6 +53,7 @@
         "desktop_content_alignment": "left",
         "color_scheme": "accent-1",
         "mobile_content_alignment": "center",
+        "mobile_content_position": "bottom",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
