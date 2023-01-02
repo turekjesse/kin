@@ -53,6 +53,34 @@
     "settings": [
       {
         "type": "header",
+        "content": "Header / Nav colors"
+      },
+      {
+        "type": "color",
+        "id": "desktop_header_bg_color",
+        "default": "#FFFFFF",
+        "label": "Desktop background"       
+      },
+      {
+        "type": "color",
+        "id": "mobile_header_bg_color",
+        "default": "#FFFFFF",
+        "label": "Mobile background"      
+      },
+      {
+        "type": "color",
+        "id": "desktop_header_font_color",
+        "default": "#FFFFFF",
+        "label": "Desktop Text Color"        
+      },
+      {
+        "type": "color",
+        "id": "mobile_header_font_color",
+        "default": "#FFFFFF",
+        "label": "Mobile Text Color"        
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.colors.settings.header__1.content"
       },
       {
