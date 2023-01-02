@@ -173,7 +173,12 @@
                   {% endif %}
                   class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
                 >
-                  {{- block.settings.button_label_2 | escape -}}
+                {% if block.settings.button_label_2 != blank and block.settings.mobile_button_label_2 != blank %}
+                    <span class="medium-hide large-up-hide">{{- block.settings.mobile_button_label_2 | escape -}}</span>                  
+                    <span class="small-hide">{{- block.settings.button_label_2 | escape -}}</span>
+                  {% elsif block.settings.button_label_2 != blank and block.settings.mobile_button_label_2 == blank %}     
+                    {{- block.settings.button_label_2 | escape -}}                           
+                  {% endif %}                  
                 </a>
               {%- endif -%}
             </div>
@@ -494,6 +499,13 @@
           "default": "Button label",
           "label": "t:sections.image-banner.blocks.buttons.settings.button_label_2.label",
           "info": "t:sections.image-banner.blocks.buttons.settings.button_label_2.info"
+        },
+        {
+          "type": "text",
+          "id": "mobile_button_label_2",
+          "default": "Button label",
+          "label": "Mobile-specific label (if to be different from desktop).",
+          "info": "Second button label must be populated to use the mobile-specific label."
         },
         {
           "type": "url",
