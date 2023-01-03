@@ -56,6 +56,17 @@
         display: none;
       }
   {% endif %}
+  
+  {% if section.settings.use_transparent_header %}
+  #MainContent {
+    margin-top: calc(-1px - var(--header-height));
+  }
+
+  .header-wrapper {
+    background: transparent !important;
+  }
+ 
+  {% endif %}
 
   .menu-drawer-container {
     display: flex;
