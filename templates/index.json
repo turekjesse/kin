@@ -28,10 +28,11 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "$149 (5% OFF)",
-            "mobile_button_label_1": "SHOP DREAM LIGHT",
+            "mobile_button_label_1": "Button label",
             "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
+            "mobile_button_label_2": "Button label",
             "button_link_2": "",
             "button_style_secondary_2": false,
             "custom_btn_width": 335
@@ -58,149 +59,9 @@
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
-    },
-    "4bc6da95-0850-4a10-9822-683884ce2977": {
-      "type": "featured-product",
-      "blocks": {
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-0": {
-          "type": "text",
-          "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-1": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-2": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-3": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
-        },
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-4": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-5": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true
-          }
-        },
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-6": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        }
-      },
-      "block_order": [
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-0",
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-1",
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-2",
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-3",
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-4",
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-5",
-        "template--17391023620383__4bc6da95-0850-4a10-9822-683884ce2977-1672511838aa3495fa-6"
-      ],
-      "settings": {
-        "product": "high-rhode",
-        "color_scheme": "background-2",
-        "secondary_background": false,
-        "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "none",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "501e6ced-238b-40de-b219-81e1eeb2213f": {
-      "type": "featured-product",
-      "blocks": {
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-0": {
-          "type": "text",
-          "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-1": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-2": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-3": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
-        },
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-4": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-5": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true
-          }
-        },
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-6": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        }
-      },
-      "block_order": [
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-0",
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-1",
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-2",
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-3",
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-4",
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-5",
-        "template--17391023620383__501e6ced-238b-40de-b219-81e1eeb2213f-16725903223fb7d493-6"
-      ],
-      "settings": {
-        "product": "dream-light",
-        "color_scheme": "background-2",
-        "secondary_background": false,
-        "media_size": "small",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "right",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
-    "image_banner",
-    "4bc6da95-0850-4a10-9822-683884ce2977",
-    "501e6ced-238b-40de-b219-81e1eeb2213f"
+    "image_banner"
   ]
 }
