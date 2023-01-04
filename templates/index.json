@@ -28,11 +28,11 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "$149 (5% OFF)",
-            "mobile_button_label_1": "Button label",
+            "mobile_button_label_1": "SHOP DREAM LIGHT",
             "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
-            "mobile_button_label_2": "Button label",
+            "mobile_button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false,
             "custom_btn_width": 335
