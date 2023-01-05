@@ -299,8 +299,12 @@ class MenuDrawer extends HTMLElement {
     this.addEventListener('focusout', this.onFocusOut.bind(this));
     this.bindEvents();
 
-    this.header = this.header || document.getElementById('shopify-section-header');        
-    document.documentElement.style.setProperty('--header-height', `${parseInt(this.header.getBoundingClientRect().height)}px`);
+    this.header = this.header || document.getElementById('shopify-section-header');
+    
+    const resizeObserver = new ResizeObserver(entries => {
+      document.documentElement.style.setProperty('--header-height', `${parseInt(this.header.getBoundingClientRect().height)}px`);
+    });
+    resizeObserver.observe(this.header);        
   }
 
   bindEvents() {
