@@ -57,7 +57,7 @@
       }
   {% endif %}
   
-  {% if section.settings.use_transparent_header %}
+  {% if template == 'index' and section.settings.use_transparent_header %}
   #MainContent {
     margin-top: calc(-1px - var(--header-height));
   }
