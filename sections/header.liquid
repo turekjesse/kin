@@ -175,9 +175,9 @@
                   <ul class="menu-drawer__menu featured-product__menu">
                     {% for link in section.settings.menu.links %}
                     {% if forloop.length > 0 %}
-                      {% if link %}
-                        <p>{{ link.link_type }}</p>
-                      {% endif %}
+                    
+                        <p>{{ link.type }}</p>
+                      
                      {% assign product = block.settings.featured_product %} 
                       <li>
                         {% if product.featured_image %}                            
