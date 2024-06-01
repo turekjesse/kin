@@ -174,26 +174,30 @@
                 <nav class="menu-drawer__navigation">
                   <ul class="menu-drawer__menu featured-product__menu">
                     {% for link in section.settings.menu.links %}
-                    {% if forloop.length > 0 %}
-                      <!-- <p style="color:black">{{ link.handle }}</p> -->
+                    {% if forloop.length > 0 %} 
+                      <p>link.handle</p>
                       {% case link.type %}
                        {% when "product_link" %}                  
-                     {% assign product = all_products[link.handle] %} 
-                      <li>
-                        {% if product.featured_image %}                            
-                          <img
-                            class="featured-product__menu-item"
-                            src="{{ product.featured_image | image_url: width: 300 }}"
-                            alt="{{ product.featured_image.alt | escape }}"
-                            loading="lazy"
-                            width="28"
-                            height="{{ 28 | divided_by: product.featured_image.aspect_ratio | ceil }}"
-                          >
-                        {% endif %}                        
-                        <a href="{{ product.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset" >
-                          {{ product.title }}
-                        </a> 
-                      </li>                      
+                       {% assign product = all_products[link.handle] %} 
+                        <li>
+                          {% if product.featured_image %}                            
+                            <img
+                              class="featured-product__menu-item"
+                              src="{{ product.featured_image | image_url: width: 300 }}"
+                              alt="{{ product.featured_image.alt | escape }}"
+                              loading="lazy"
+                              width="28"
+                              height="{{ 28 | divided_by: product.featured_image.aspect_ratio | ceil }}"
+                            >
+                          {% endif %}                        
+                          <a href="{{ product.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset" >
+                            {{ product.title }}
+                          </a> 
+                        </li>
+                      {% when "collection_link" %}
+                        <h2 style="color:black; font-weight:bold;">{{ collections[link.handle] }}</h2>
+                      {% else %}
+                        <p style="color:black; font-weight:bold;">{{ link.handle }} - {{ link.type }}</p>
                     {% endcase %}
                     {% endif %}
                   {% endfor %}
