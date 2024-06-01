@@ -195,7 +195,22 @@
                           </a> 
                         </li>
                       {% when "collection_link" %}
-                        <h2 style="color:black; font-weight:bold;">{{ collections[link.handle] }}</h2>
+                        {% assign collection = collections[link.handle] %} 
+                        <li>
+                          {% if collection.featured_image %}                            
+                            <img
+                              class="featured-product__menu-item"
+                              src="{{ collection.featured_image | image_url: width: 300 }}"
+                              alt="{{ collection.featured_image.alt | escape }}"
+                              loading="lazy"
+                              width="28"
+                              height="{{ 28 | divided_by: product.featured_image.aspect_ratio | ceil }}"
+                            >
+                          {% endif %}                        
+                          <a href="{{ collection.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset" >
+                            {{ collection.title }}
+                          </a> 
+                        </li>
                       {% else %}
                         <p style="color:black; font-weight:bold;">{{ link.handle }} - {{ link.type }}</p>
                     {% endcase %}
