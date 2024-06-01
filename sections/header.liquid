@@ -173,6 +173,29 @@
               <div class="menu-drawer__navigation-container">
                 <nav class="menu-drawer__navigation">
                   <ul class="menu-drawer__menu featured-product__menu">
+                    {% for link in section.settings.menu.links %}
+                    {% if forloop.length > 0 %}
+                      {% if link %}
+                        <p>{{ link.link_type }}</p>
+                      {% endif %}
+                     {% assign product = block.settings.featured_product %} 
+                      <li>
+                        {% if product.featured_image %}                            
+                          <img
+                            class="featured-product__menu-item"
+                            src="{{ product.featured_image | image_url: width: 300 }}"
+                            alt="{{ product.featured_image.alt | escape }}"
+                            loading="lazy"
+                            width="28"
+                            height="{{ 28 | divided_by: product.featured_image.aspect_ratio | ceil }}"
+                          >
+                        {% endif %}                        
+                        <a href="{{ product.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset" >
+                          {{ product.title }}
+                        </a> 
+                      </li>                                                        
+                    {% endif %}
+                  {% endfor %}
                   {% for block in section.blocks %}
                     {% if forloop.length > 0 %}
                     {% assign product = block.settings.featured_product %}    
