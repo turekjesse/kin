@@ -175,7 +175,7 @@
                   <ul class="menu-drawer__menu featured-product__menu">
                     {% for link in section.settings.menu.links %}
                     {% if forloop.length > 0 %} 
-                      <p>link.handle</p>
+                      <p style="color:black">{{ link.handle }}</p>
                       {% case link.type %}
                        {% when "product_link" %}                  
                        {% assign product = all_products[link.handle] %} 
