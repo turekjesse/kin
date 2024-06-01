@@ -175,10 +175,9 @@
                   <ul class="menu-drawer__menu featured-product__menu">
                     {% for link in section.settings.menu.links %}
                     {% if forloop.length > 0 %}
-                    
-                        <p>{{ link.type }}</p>
-                      
-                     {% assign product = block.settings.featured_product %} 
+                      <p style="color:black">{{ link.handle }}</p>
+                     {% if link.type == "product_link" %}                       
+                     {% assign product = all_products[link.handle] %} 
                       <li>
                         {% if product.featured_image %}                            
                           <img
@@ -193,7 +192,8 @@
                         <a href="{{ product.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset" >
                           {{ product.title }}
                         </a> 
-                      </li>                                                        
+                      </li>
+                       {% endif %}    
                     {% endif %}
                   {% endfor %}
                   {% for block in section.blocks %}
